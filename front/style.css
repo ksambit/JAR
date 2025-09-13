@@ -1,0 +1,162 @@
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: "Orbitron", sans-serif;
+}
+
+.Square {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Square span:nth-child(1),
+.Square span:nth-child(2),
+.Square span:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at center, #6b72ff00 40%, #000dff3b 50%);
+    box-shadow: 0 0 15px rgba(25,0,255,0.8), inset 0 0 10px rgba(25,0,255,0.6);
+    border-radius: 38% 62% 63% 37% / 41% 37% 56% 59%;
+    transition: 0.5s;
+}
+
+.Square span:nth-child(1) { animation: animat1 6s linear infinite; }
+.Square span:nth-child(2) { animation: animat2 4s linear infinite; }
+.Square span:nth-child(3) { animation: animat3 8s linear infinite; }
+
+@keyframes animat1 { 0%{transform: rotate(0deg);} 100%{transform: rotate(360deg);} }
+@keyframes animat2 { 0%{transform: rotate(0deg);} 100%{transform: rotate(360deg);} }
+@keyframes animat3 { 0%{transform: rotate(0deg);} 100%{transform: rotate(360deg);} }
+
+
+h5, h6 {
+  color: cyan;
+  text-shadow: 0 0 8px cyan, 0 0 15px cyan;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+#TextInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    margin: 20px auto;
+    width: 80%; 
+}
+
+.form-control.me-2 {
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    height: 45px;
+    border-radius: 8px;
+}
+
+.form-control.me-2::placeholder {
+    color: white; 
+    opacity: 0.7;
+}
+
+
+.btn-primary {
+    width: 60px;
+    height: 45px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+    padding: 0px;
+    font-size: 16px;
+    box-shadow: 0 0 12px rgba(25,0,255,0.7), inset 0 0 6px rgba(25,0,255,0.4);
+}
+
+.btn-primary:before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #ff7300, yellow, green, cyan, blue, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(4px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn-primary:hover:before {
+    opacity: 1;
+}
+
+.btn-primary:active {
+    color: #ffffff;
+    background: black;
+}
+
+.btn-primary::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at center, #6b72ff00 40%, #000dff3b 50%);
+    box-shadow: 0 0 12px rgba(25,0,255,0.6), inset 0 0 6px rgba(25,0,255,0.5);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+.btn-secondary {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: cyan;
+    background: black;
+    border: 2px solid cyan;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-secondary i {
+    font-size: 18px;
+}
+#canvasOne {
+    position: absolute;
+    z-index: -1;
+}
+#canvasTwo {
+    position: absolute;
+    z-index: -2; 
+}
