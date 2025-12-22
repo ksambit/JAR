@@ -1,4 +1,4 @@
-# 🚀 JARVIS(Hackthon)
+# 🚀 JARVIS(Hackathon)
 
 A modular project by **ksambit** that brings together a **frontend**, a **backend engine**, and a **main runner script** to create a clean separation of UI and logic.  
 
